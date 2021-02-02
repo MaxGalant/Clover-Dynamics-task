@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Clover-Dynamics-task/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/Clover-Dynamics-task/static/js/main.63970ea7.chunk.js",
+    "main.js.map": "/Clover-Dynamics-task/static/js/main.63970ea7.chunk.js.map",
+    "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.a4df01fc.js",
+    "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.a4df01fc.js.map",
+    "static/js/2.6baac136.chunk.js": "/Clover-Dynamics-task/static/js/2.6baac136.chunk.js",
+    "static/js/2.6baac136.chunk.js.map": "/Clover-Dynamics-task/static/js/2.6baac136.chunk.js.map",
+    "static/js/3.26343629.chunk.js": "/Clover-Dynamics-task/static/js/3.26343629.chunk.js",
+    "static/js/3.26343629.chunk.js.map": "/Clover-Dynamics-task/static/js/3.26343629.chunk.js.map",
+    "index.html": "/Clover-Dynamics-task/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/Clover-Dynamics-task/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.6baac136.chunk.js.LICENSE.txt": "/Clover-Dynamics-task/static/js/2.6baac136.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Clover-Dynamics-task/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4df01fc.js",
+    "static/js/2.6baac136.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.63970ea7.chunk.js"
+  ]
+}
