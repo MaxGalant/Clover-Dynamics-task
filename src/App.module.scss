@@ -36,20 +36,19 @@
     font-size: font-change(2);
     background: none;
     background-color: $font-color;
-    @include _300{
-        width: wigth-change(160);
-        margin-top: base-spacing(2);
-
+    @include _300 {
+      width: wigth-change(160);
+      margin-top: base-spacing(2);
     }
 
     @include _550 {
-        width: wigth-change(180);
-          
-        margin-top: base-spacing(2);
-      }
+      width: wigth-change(180);
+
+      margin-top: base-spacing(2);
+    }
     @include _650 {
       width: wigth-change(180);
-        
+
       margin-top: base-spacing(2);
     }
     margin-top: base-spacing(5);
@@ -86,27 +85,26 @@
       grid-column-gap: 50px;
     }
     grid-template-areas: "Rover1 Rover2 Rover3";
-   
+
     @include _650 {
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-columns: 0.5fr 1fr 0.5fr;
       margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
-     
+
       grid-row-gap: 40px;
       grid-column-gap: 0;
       grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
-      
     }
-    @include _550{
-        grid-template-rows: 1fr 1fr 1fr; 
-        grid-template-columns: 0.5fr 1fr 0.5fr;
-        grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
-        grid-row-gap: 40px;
-        grid-column-gap: 0;
-        margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+    @include _550 {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
+      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+      grid-row-gap: 40px;
+      grid-column-gap: 0;
+      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
     }
     @include _300 {
-      grid-template-rows: 1fr 1fr 1fr; 
+      grid-template-rows: 1fr 1fr 1fr;
       grid-template-columns: 0.1fr 1fr 0.1fr;
       grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
       grid-row-gap: 40px;
@@ -128,19 +126,56 @@
   }
   .SelectedRover {
     display: none;
-
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". Rover .";
     .Rover {
+      grid-area: Rover;
       border-radius: 30px;
       grid-gap: 15px;
       display: grid;
       padding: base-spacing(2);
-      grid-template-columns: 0.8fr 1fr;
       grid-template-areas: "RoverImg RoverInfo";
-      margin: base-spacing(10) base-spacing(40) 0 base-spacing(40);
+      margin: base-spacing(10) base-spacing(50) 0 base-spacing(50);
       height: heigth-change(300);
       background-color: $mars-color;
+      @include __650 {
+        grid-template-rows: 1fr 1fr;
+        height: 550px;
+        grid-template-areas: "RoverImg " "RoverInfo";
+        margin: base-spacing(10);
+      }
+
+      @include _1200 {
+        margin: base-spacing(10) auto;
+      }
+      @include _1050 {
+        margin: base-spacing(10) auto;
+      }
+      @include _800 {
+        margin: base-spacing(10) auto;
+      }
+      @include _950 {
+        margin: base-spacing(10) auto;
+      }
+      @include _550 {
+        margin: base-spacing(10) auto;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 400px;
+        width: 400px;
+        height: 550px;
+        grid-template-areas: "RoverImg " "RoverInfo";
+        margin: base-spacing(10);
+      }
+
       .RoverImg {
-        width: 100%;
+        @include __650 {
+          width: 100%;
+        }
+        @include _550 {
+          width: 100%;
+
+        }
+        width: 300px;
         height: heigth-change(300);
         border-radius: 30px;
         grid-area: RoverImg;
@@ -158,6 +193,11 @@
           grid-area: RoverName;
           color: $font-color;
           font-size: font-change(50);
+          @include _550 { font-size: font-change(25);}
+          @include _1050 {
+            font-size: font-change(40);
+          }
+
           font-weight: bold;
         }
         .RoverProperty {
@@ -172,6 +212,14 @@
               color: $font-color;
             }
             .Camera {
+              @include __650 {
+                height: heigth-change(30);
+                width: wigth-change(150);
+              }
+              @include _550 {
+                height: heigth-change(30);
+                width: wigth-change(150);
+              }
               margin-top: base-spacing(3);
               text-align: center;
               font-size: font-change(2);
@@ -187,6 +235,14 @@
               color: $font-color;
             }
             .SolDayInput {
+              @include __650 {
+                height: heigth-change(30);
+                width: wigth-change(150);
+              }
+              @include _550 {
+                height: heigth-change(30);
+                width: wigth-change(150);
+              }
               border-radius: 20px;
               font-size: font-change(2);
               margin-top: base-spacing(3);
@@ -205,6 +261,12 @@
           margin: 0 base-spacing(20);
           grid-area: ShowButton;
           width: wigth-change(150);
+          @include __650 {
+            margin-top: base-spacing(2);
+          }
+          @include _550 {
+            margin-top: base-spacing(2);
+          }
         }
       }
       .Arrow {
