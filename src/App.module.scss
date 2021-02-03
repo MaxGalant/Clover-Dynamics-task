@@ -89,7 +89,7 @@
     @include _650 {
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-columns: 0.5fr 1fr 0.5fr;
-      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+      margin: base-spacing(10) auto;
 
       grid-row-gap: 40px;
       grid-column-gap: 0;
@@ -101,7 +101,7 @@
       grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
       grid-row-gap: 40px;
       grid-column-gap: 0;
-      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+      margin: base-spacing(10) auto;
     }
     @include _300 {
       grid-template-rows: 1fr 1fr 1fr;
@@ -109,7 +109,7 @@
       grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
       grid-row-gap: 40px;
       grid-column-gap: 0;
-      margin: base-spacing(10) base-spacing(2) 0 base-spacing(2);
+      margin: base-spacing(10) auto;
     }
     .Rover1 {
       grid-area: Rover1;
@@ -161,17 +161,27 @@
         margin: base-spacing(10) auto;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 400px;
-        width: 400px;
         height: 550px;
         grid-template-areas: "RoverImg " "RoverInfo";
         margin: base-spacing(10);
       }
-
+      @include _300{
+        margin: base-spacing(10) auto;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 300px;
+        height: 600px;
+        grid-template-areas: "RoverImg " "RoverInfo";
+        margin: base-spacing(10);
+      }
       .RoverImg {
         @include __650 {
           width: 100%;
         }
         @include _550 {
+          width: 100%;
+
+        }
+        @include _300 {
           width: 100%;
 
         }
@@ -194,6 +204,7 @@
           color: $font-color;
           font-size: font-change(50);
           @include _550 { font-size: font-change(25);}
+          @include _300 { font-size: font-change(25);}
           @include _1050 {
             font-size: font-change(40);
           }
@@ -201,6 +212,11 @@
           font-weight: bold;
         }
         .RoverProperty {
+          @include _300{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "RoverCameras"" SolDay";
+          }
           grid-area: RoverProperty;
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -214,11 +230,17 @@
             .Camera {
               @include __650 {
                 height: heigth-change(30);
-                width: wigth-change(150);
+                width: wigth-change(120);
               }
               @include _550 {
                 height: heigth-change(30);
                 width: wigth-change(150);
+              }
+              @include _300 {
+                margin-top: base-spacing(1);
+                height: heigth-change(25);
+                width: wigth-change(130);
+             
               }
               margin-top: base-spacing(3);
               text-align: center;
@@ -243,6 +265,12 @@
                 height: heigth-change(30);
                 width: wigth-change(150);
               }
+              
+              @include _300 {
+                margin-top: base-spacing(1);
+                height: heigth-change(25);
+                width: wigth-change(130);
+              }
               border-radius: 20px;
               font-size: font-change(2);
               margin-top: base-spacing(3);
@@ -266,6 +294,9 @@
           }
           @include _550 {
             margin-top: base-spacing(2);
+          }
+          @include _300 {
+            margin-top: base-spacing(5);
           }
         }
       }
