@@ -60,31 +60,35 @@
   @extend %maxWidth;
   .MarsTheme {
     background-attachment: fixed;
-    background-position: center;
-    height: heigth-change(840);
+    height: heigth-change(800);
     margin-top: base-spacing(5);
     background-image: url(./Img/Mars.gif);
+    @include _1200{
+      
+      background-size: 100%;
+      height: heigth-change(550);
+    }  
     @include _1050{
       
       background-size: 100%;
-      height: heigth-change(640);
+      height: heigth-change(470);
     }  
     @include _800{
       
       background-size: 100%;
-      height: heigth-change(540);
+      height: heigth-change(350);
     }  
     @include _650{ 
       background-size: 100%;
-      height: heigth-change(560);
+      height: heigth-change(270);
     } 
     @include _550{ 
       background-size: 100%;
-      height: heigth-change(500);
+      height: heigth-change(230);
     } 
     @include _300{ 
-      background-size: 100%;
-      height: heigth-change(470);
+      background-size: 100% auto;
+      height: heigth-change(110);
     } 
     background-repeat: no-repeat;
     @extend %maxWidth;
