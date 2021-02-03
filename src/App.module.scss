@@ -386,7 +386,6 @@
         border: 3px solid $mars-color;
         width: wigth-change(300);
         height: heigth-change(300);
-
         margin-top: base-spacing(10);
       }
     }
@@ -396,8 +395,35 @@
     margin-top: base-spacing(7);
     display: none;
     grid-template-columns: 1fr 0.3fr 1fr;
+    @include _300{
+      grid-template-columns: 1fr 100px 1fr;
+    }
+    @include _550{
+      grid-template-columns: 1fr 100px 1fr;
+    }
+    @include _650{
+      grid-template-columns: 1fr 100px 1fr;
+    }
+    @include _800{
+      grid-template-columns: 1fr 100px 1fr;
+    }
     grid-template-areas: ". Load .";
     .Load {
+      @include _1050{
+        font-size: 20px;     
+      }
+      @include _800{
+        font-size: 16px;     
+      }
+      @include _650{
+        font-size: 16px;     
+      }
+      @include _550{
+        font-size: 16px;     
+      }
+      @include _300{
+        font-size: 16px;     
+      }
       font-weight: 600;
       border-radius: 20px;
       height: 50px;
@@ -405,6 +431,8 @@
       grid-area: Load;
       color: $mars-color;
       font-size: 25px;
+
+      
     }
   }
 }
