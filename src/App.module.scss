@@ -1,0 +1,265 @@
+@import "./Style/settings.scss";
+@import "./Style/tools.scss";
+@import "./Style/media_mixin.scss";
+%maxWidth {
+  width: 100%;
+}
+
+%coverBackgroundSize {
+  background-size: cover;
+}
+%RoverCard {
+  background-color: $mars-color;
+  text-align: center;
+  border: 2px solid $mars-color;
+  width: 100%;
+  height: 100%;
+  .RoverBlockImg {
+    width: 100%;
+    height: heigth-change(200);
+  }
+  .RoverBlockName {
+      margin-top: base-spacing(2);
+    color: $font-color;
+    font-size: font-change(10);
+    font-weight: bold;
+  }
+  .RoverBlockButton {
+    cursor: pointer;
+    font-weight: 600;
+    color: $mars-color;
+    width: wigth-change(200);
+    @include _800{
+    width: wigth-change(185);
+        
+    }
+    height: heigth-change(50);
+    font-size: font-change(2);
+    background: none;
+    background-color: $font-color;
+    @include _500{
+    margin-top: base-spacing(2);
+
+    }
+    margin-top: base-spacing(5);
+    border-radius: 25px;
+  }
+}
+.App {
+  height: 1500px;
+  @extend %maxWidth;
+  .MarsTheme {
+    background-attachment: fixed;
+    background-position: center;
+    height: heigth-change(840);
+    margin-top: base-spacing(5);
+    background-image: url(./Img/Mars.gif);
+    background-repeat: no-repeat;
+    @extend %maxWidth;
+    @extend %coverBackgroundSize;
+  }
+  .RoverBlock {
+    display: grid;
+    margin: base-spacing(10) base-spacing(30) 0 base-spacing(30);
+    @include _1200{
+    margin: base-spacing(10) base-spacing(15) 0 base-spacing(15);    
+    }
+    @include _1050{
+    margin: base-spacing(10) base-spacing(10) 0 base-spacing(10);    
+        
+    }
+    @include _800{
+        margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);    
+            
+        }
+    height: heigth-change(400);
+    grid-template-columns: 1fr 1fr 1fr;
+    
+       
+    
+    grid-column-gap: 80px;
+    @include _800{
+    grid-column-gap: 50px;
+        
+    }
+    grid-template-areas: "Rover1 Rover2 Rover3";
+    @include _500{ 
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: .3fr 1fr .3fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 0;
+    grid-template-areas: ". Rover1 ."" . Rover2 ."" . Rover3 .";
+    margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);    
+   
+    }
+    .Rover1 {
+      grid-area: Rover1;
+      @extend %RoverCard;
+    }
+    .Rover2 {
+      grid-area: Rover2;
+      @extend %RoverCard;
+    }
+    .Rover3 {
+      grid-area: Rover3;
+      @extend %RoverCard;
+    }
+  }
+  .SelectedRover {
+    display: none;
+   
+    
+    .Rover {
+      border-radius: 30px;
+      grid-gap: 15px;
+      display: grid;
+      padding: base-spacing(2);
+      grid-template-columns: 0.8fr 1fr;
+      grid-template-areas: "RoverImg RoverInfo";
+      margin: base-spacing(10) base-spacing(40) 0 base-spacing(40);
+      height: heigth-change(300);
+      background-color: $mars-color;
+      .RoverImg {
+        width: 100%;
+        height: heigth-change(300);
+        border-radius: 30px;
+        grid-area: RoverImg;
+      }
+      .RoverInfo {
+        text-align: center;
+        justify-content: center;
+        grid-area: RoverInfo;
+        display: grid;
+        grid-template-rows: 0.5fr 1fr 0.3fr;
+        grid-template-areas: "RoverName" "RoverProperty" "ShowButton";
+
+        .RoverName {
+          text-align: center;
+          grid-area: RoverName;
+          color: $font-color;
+          font-size: font-change(50);
+          font-weight: bold;
+        }
+        .RoverProperty {
+          grid-area: RoverProperty;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "RoverCameras SolDay";
+          .RoverCameras {
+            grid-area: RoverCameras;
+            .CameraTitle {
+              font-size: font-change(5);
+              color: $font-color;
+            }
+            .Camera {
+              margin-top: base-spacing(3);
+              text-align: center;
+              font-size: font-change(2);
+              width: wigth-change(200);
+              height: heigth-change(50);
+              border-radius: 20px;
+            }
+          }
+          .SolDay {
+            grid-area: SolDay;
+            .SolDayTitle {
+              font-size: font-change(5);
+              color: $font-color;
+            }
+            .SolDayInput {
+              border-radius: 20px;
+              font-size: font-change(2);
+              margin-top: base-spacing(3);
+              height: heigth-change(50);
+            }
+          }
+        }
+        .ShowButton {
+          cursor: pointer;
+          font-size: font-change(10);
+          font-weight: bold;
+          border-radius: 20px;
+          border: none;
+          background-color: none;
+          color: $mars-color;
+          margin: 0 base-spacing(20);
+          grid-area: ShowButton;
+          width: wigth-change(150);
+        }
+      }
+      .Arrow {
+        display: flex;
+        align-items: center;
+      }
+      .ArrowIcon {
+        cursor: pointer;
+        margin-top: base-spacing(5);
+        color: $mars-color;
+        font-size: 50px;
+      }
+      .ArrowTitle {
+        height: 50px;
+        text-align: center;
+        cursor: pointer;
+        margin-top: base-spacing(7);
+        color: $mars-color;
+        font-size: 20px;
+      }
+    }
+  }
+  .ErrorContainer {
+    display: none;
+    .Error {
+      margin-top: base-spacing(10);
+      display: grid;
+      grid-template-columns: 1fr 0.8fr 1fr;
+      grid-template-areas: ".ErrorTitle . ";
+      .ErrorTitle {
+        grid-area: ErrorTitle;
+        font-weight: 500;
+        color: $mars-color;
+        font-size: font-change(10);
+        text-align: center;
+      }
+    }
+  }
+  .PhotosContainer {
+    display: none;
+    .PhotosBlock {
+      margin-top: base-spacing(10);
+      display: grid;
+      grid-template-columns: 1fr 0.8fr 1fr;
+      grid-template-areas: ". Photos .";
+    }
+    .Photos {
+      font-weight: 500;
+      color: $mars-color;
+      font-size: font-change(10);
+      text-align: center;
+      grid-area: Photos;
+      .Photo {
+        border: 3px solid $mars-color;
+        width: wigth-change(300);
+        height: heigth-change(300);
+
+        margin-top: base-spacing(10);
+      }
+    }
+  }
+  .LoadBlock{
+      text-align: center;
+      margin-top: base-spacing(7);
+      display: none;
+      grid-template-columns: 1fr .3fr 1fr;
+      grid-template-areas: ". Load .";
+      .Load{
+          font-weight: 600;
+          border-radius: 20px;
+          height: 50px;
+          background:none;
+          grid-area: Load;
+          color: $mars-color;
+          font-size: 25px;
+      }
+  }
+}

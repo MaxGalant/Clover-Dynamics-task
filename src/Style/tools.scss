@@ -1,0 +1,14 @@
+@import "./settings.scss";
+
+@function base-spacing($amount: 1) {
+    @return $amount * $base-spacing-unit;
+}
+@function font-change($amount: 1) {
+    @return $amount+$base-font-size;
+}
+@function heigth-change($amount: 1){
+    @return $amount*$base-height;
+}
+@function wigth-change($amount: 1){
+    @return $amount*$base-width;
+}
