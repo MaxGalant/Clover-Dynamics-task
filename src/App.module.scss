@@ -165,14 +165,23 @@
         grid-template-areas: "RoverImg " "RoverInfo";
         margin: base-spacing(10);
       }
-      @include _300{
+      @include _400{
         margin: base-spacing(10) auto;
         grid-template-rows: 1fr 1fr;
-        grid-template-columns: 300px;
+        grid-template-columns: 340px;
         height: 600px;
         grid-template-areas: "RoverImg " "RoverInfo";
-        margin: base-spacing(10);
+        
       }
+      @include __300{
+        margin: base-spacing(10) auto;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 250px;
+        height: 600px;
+        grid-template-areas: "RoverImg " "RoverInfo";
+        
+      }
+
       .RoverImg {
         @include __650 {
           width: 100%;
@@ -181,7 +190,11 @@
           width: 100%;
 
         }
-        @include _300 {
+        @include __300 {
+          width: 100%;
+
+        }
+        @include _400 {
           width: 100%;
 
         }
@@ -204,7 +217,8 @@
           color: $font-color;
           font-size: font-change(50);
           @include _550 { font-size: font-change(25);}
-          @include _300 { font-size: font-change(25);}
+          @include __300 { font-size: font-change(25);}
+          @include _400 { font-size: font-change(25);}
           @include _1050 {
             font-size: font-change(40);
           }
@@ -212,7 +226,12 @@
           font-weight: bold;
         }
         .RoverProperty {
-          @include _300{
+          @include __300{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "RoverCameras"" SolDay";
+          }
+          @include _400{
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
             grid-template-areas: "RoverCameras"" SolDay";
@@ -236,7 +255,13 @@
                 height: heigth-change(30);
                 width: wigth-change(150);
               }
-              @include _300 {
+              @include _400 {
+                margin-top: base-spacing(1);
+                height: heigth-change(25);
+                width: wigth-change(130);
+             
+              }
+              @include __300 {
                 margin-top: base-spacing(1);
                 height: heigth-change(25);
                 width: wigth-change(130);
@@ -265,8 +290,12 @@
                 height: heigth-change(30);
                 width: wigth-change(150);
               }
-              
-              @include _300 {
+              @include _400 {
+                margin-top: base-spacing(1);
+                height: heigth-change(25);
+                width: wigth-change(130);
+              }
+              @include __300 {
                 margin-top: base-spacing(1);
                 height: heigth-change(25);
                 width: wigth-change(130);
@@ -295,7 +324,10 @@
           @include _550 {
             margin-top: base-spacing(2);
           }
-          @include _300 {
+          @include _400 {
+            margin-top: base-spacing(5);
+          }
+          @include __300 {
             margin-top: base-spacing(5);
           }
         }
