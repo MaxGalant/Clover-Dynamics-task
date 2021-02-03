@@ -19,7 +19,7 @@
     height: heigth-change(200);
   }
   .RoverBlockName {
-      margin-top: base-spacing(2);
+    margin-top: base-spacing(2);
     color: $font-color;
     font-size: font-change(10);
     font-weight: bold;
@@ -29,17 +29,28 @@
     font-weight: 600;
     color: $mars-color;
     width: wigth-change(200);
-    @include _800{
-    width: wigth-change(185);
-        
+    @include _800 {
+      width: wigth-change(185);
     }
     height: heigth-change(50);
     font-size: font-change(2);
     background: none;
     background-color: $font-color;
-    @include _500{
-    margin-top: base-spacing(2);
+    @include _300{
+        width: wigth-change(160);
+        margin-top: base-spacing(2);
 
+    }
+
+    @include _550 {
+        width: wigth-change(180);
+          
+        margin-top: base-spacing(2);
+      }
+    @include _650 {
+      width: wigth-change(180);
+        
+      margin-top: base-spacing(2);
     }
     margin-top: base-spacing(5);
     border-radius: 25px;
@@ -61,36 +72,46 @@
   .RoverBlock {
     display: grid;
     margin: base-spacing(10) base-spacing(30) 0 base-spacing(30);
-    @include _1200{
-    margin: base-spacing(10) base-spacing(15) 0 base-spacing(15);    
+    @include _1200 {
+      margin: base-spacing(10) base-spacing(15) 0 base-spacing(15);
     }
-    @include _1050{
-    margin: base-spacing(10) base-spacing(10) 0 base-spacing(10);    
-        
+    @include _1050 {
+      margin: base-spacing(10) base-spacing(10) 0 base-spacing(10);
     }
-    @include _800{
-        margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);    
-            
-        }
     height: heigth-change(400);
     grid-template-columns: 1fr 1fr 1fr;
-    
-       
-    
     grid-column-gap: 80px;
-    @include _800{
-    grid-column-gap: 50px;
-        
+    @include _800 {
+      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+      grid-column-gap: 50px;
     }
     grid-template-areas: "Rover1 Rover2 Rover3";
-    @include _500{ 
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: .3fr 1fr .3fr;
-    grid-row-gap: 40px;
-    grid-column-gap: 0;
-    grid-template-areas: ". Rover1 ."" . Rover2 ."" . Rover3 .";
-    margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);    
    
+    @include _650 {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
+      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+     
+      grid-row-gap: 40px;
+      grid-column-gap: 0;
+      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+      
+    }
+    @include _550{
+        grid-template-rows: 1fr 1fr 1fr; 
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+        grid-row-gap: 40px;
+        grid-column-gap: 0;
+        margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+    }
+    @include _300 {
+      grid-template-rows: 1fr 1fr 1fr; 
+      grid-template-columns: 0.1fr 1fr 0.1fr;
+      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+      grid-row-gap: 40px;
+      grid-column-gap: 0;
+      margin: base-spacing(10) base-spacing(2) 0 base-spacing(2);
     }
     .Rover1 {
       grid-area: Rover1;
@@ -107,8 +128,7 @@
   }
   .SelectedRover {
     display: none;
-   
-    
+
     .Rover {
       border-radius: 30px;
       grid-gap: 15px;
@@ -246,20 +266,20 @@
       }
     }
   }
-  .LoadBlock{
-      text-align: center;
-      margin-top: base-spacing(7);
-      display: none;
-      grid-template-columns: 1fr .3fr 1fr;
-      grid-template-areas: ". Load .";
-      .Load{
-          font-weight: 600;
-          border-radius: 20px;
-          height: 50px;
-          background:none;
-          grid-area: Load;
-          color: $mars-color;
-          font-size: 25px;
-      }
+  .LoadBlock {
+    text-align: center;
+    margin-top: base-spacing(7);
+    display: none;
+    grid-template-columns: 1fr 0.3fr 1fr;
+    grid-template-areas: ". Load .";
+    .Load {
+      font-weight: 600;
+      border-radius: 20px;
+      height: 50px;
+      background: none;
+      grid-area: Load;
+      color: $mars-color;
+      font-size: 25px;
+    }
   }
 }

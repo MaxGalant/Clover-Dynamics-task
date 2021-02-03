@@ -15,8 +15,18 @@
         @content;
         }
 }
-@mixin  _500 {
-    @media (min-width:500px)and(max-width:799px){
+@mixin  _650 {
+    @media (min-width:650px)and(max-width:799px){
+        @content;
+        }
+}
+@mixin _550 {
+    @media (min-width:550px)and(max-width:649px){
+        @content;
+        }
+}
+@mixin _300{
+    @media (min-width:300px)and(max-width:549px){
         @content;
         }
 }
