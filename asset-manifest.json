@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Clover-Dynamics-task/static/css/main.c59d4de3.chunk.css",
-    "main.js": "/Clover-Dynamics-task/static/js/main.25f903bd.chunk.js",
-    "main.js.map": "/Clover-Dynamics-task/static/js/main.25f903bd.chunk.js.map",
+    "main.css": "/Clover-Dynamics-task/static/css/main.eca54031.chunk.css",
+    "main.js": "/Clover-Dynamics-task/static/js/main.151c374b.chunk.js",
+    "main.js.map": "/Clover-Dynamics-task/static/js/main.151c374b.chunk.js.map",
     "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.310ce7e3.js",
     "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.310ce7e3.js.map",
     "static/js/2.fe96ce9d.chunk.js": "/Clover-Dynamics-task/static/js/2.fe96ce9d.chunk.js",
@@ -10,16 +10,16 @@
     "static/js/3.3a563e9b.chunk.js": "/Clover-Dynamics-task/static/js/3.3a563e9b.chunk.js",
     "static/js/3.3a563e9b.chunk.js.map": "/Clover-Dynamics-task/static/js/3.3a563e9b.chunk.js.map",
     "index.html": "/Clover-Dynamics-task/index.html",
-    "static/css/main.c59d4de3.chunk.css.map": "/Clover-Dynamics-task/static/css/main.c59d4de3.chunk.css.map",
+    "static/css/main.eca54031.chunk.css.map": "/Clover-Dynamics-task/static/css/main.eca54031.chunk.css.map",
     "static/js/2.fe96ce9d.chunk.js.LICENSE.txt": "/Clover-Dynamics-task/static/js/2.fe96ce9d.chunk.js.LICENSE.txt",
-    "static/media/App.module.scss": "/Clover-Dynamics-task/static/media/Mars.5fb74322.gif",
+    "static/media/App.module.scss": "/Clover-Dynamics-task/static/media/bg-2.a60ae0ea.jpg",
     "static/media/rover.module.scss": "/Clover-Dynamics-task/static/media/bg-1.ec39f4a4.jpg",
     "static/media/curiosity.08d28769.jpg": "/Clover-Dynamics-task/static/media/curiosity.08d28769.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.310ce7e3.js",
     "static/js/2.fe96ce9d.chunk.js",
-    "static/css/main.c59d4de3.chunk.css",
-    "static/js/main.25f903bd.chunk.js"
+    "static/css/main.eca54031.chunk.css",
+    "static/js/main.151c374b.chunk.js"
   ]
 }
