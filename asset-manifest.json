@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Clover-Dynamics-task/static/css/main.413194c9.chunk.css",
-    "main.js": "/Clover-Dynamics-task/static/js/main.2cde582e.chunk.js",
-    "main.js.map": "/Clover-Dynamics-task/static/js/main.2cde582e.chunk.js.map",
+    "main.css": "/Clover-Dynamics-task/static/css/main.20065a2d.chunk.css",
+    "main.js": "/Clover-Dynamics-task/static/js/main.372e3714.chunk.js",
+    "main.js.map": "/Clover-Dynamics-task/static/js/main.372e3714.chunk.js.map",
     "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.11005d4e.js",
     "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.11005d4e.js.map",
     "static/js/2.195de2cb.chunk.js": "/Clover-Dynamics-task/static/js/2.195de2cb.chunk.js",
@@ -10,15 +10,15 @@
     "static/js/3.7c6520ce.chunk.js": "/Clover-Dynamics-task/static/js/3.7c6520ce.chunk.js",
     "static/js/3.7c6520ce.chunk.js.map": "/Clover-Dynamics-task/static/js/3.7c6520ce.chunk.js.map",
     "index.html": "/Clover-Dynamics-task/index.html",
-    "static/css/main.413194c9.chunk.css.map": "/Clover-Dynamics-task/static/css/main.413194c9.chunk.css.map",
+    "static/css/main.20065a2d.chunk.css.map": "/Clover-Dynamics-task/static/css/main.20065a2d.chunk.css.map",
     "static/js/2.195de2cb.chunk.js.LICENSE.txt": "/Clover-Dynamics-task/static/js/2.195de2cb.chunk.js.LICENSE.txt",
-    "static/media/App.module.scss": "/Clover-Dynamics-task/static/media/Mars.5fb74322.gif",
+    "static/media/App.module.scss": "/Clover-Dynamics-task/static/media/bg-1.ec39f4a4.jpg",
     "static/media/curiosity.08d28769.jpg": "/Clover-Dynamics-task/static/media/curiosity.08d28769.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.11005d4e.js",
     "static/js/2.195de2cb.chunk.js",
-    "static/css/main.413194c9.chunk.css",
-    "static/js/main.2cde582e.chunk.js"
+    "static/css/main.20065a2d.chunk.css",
+    "static/js/main.372e3714.chunk.js"
   ]
 }
