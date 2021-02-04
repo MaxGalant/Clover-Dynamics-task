@@ -169,7 +169,7 @@ function App(props) {
         <ErrorComponent text={"Sol day must be number"} />
       </div>
       <div className={s.ErrorContainer} id="Error3">
-        <ErrorComponent text={"Camera can't be NONE"} />
+        <ErrorComponent text={"You need to select a camera"} />
       </div>
       <div className={s.PhotosContainer} id="PhotosBlock">
         <div className={s.PhotosBlockContainer}>
