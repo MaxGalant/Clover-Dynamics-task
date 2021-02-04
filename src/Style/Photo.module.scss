@@ -5,6 +5,7 @@
   margin: 6px;
   display: inline-flex;
   img {
+    border: 3px solid $mars-color;
     width: 300px;
     height: 300px;
     @include _300 {

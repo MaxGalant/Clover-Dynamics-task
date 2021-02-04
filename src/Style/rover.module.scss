@@ -1,0 +1,261 @@
+@import "./settings.scss";
+@import "./tools.scss";
+@import "./media_mixin.scss";
+
+.SelectedRover {
+  background-image: url(../Img/bg-1.jpg);
+  height: 600px;
+  margin-top: base-spacing(10);
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". Rover .";
+  @include __300 {
+    margin-top: base-spacing(5);
+    height: 850px;
+  }
+  @include _400 {
+    margin-top: base-spacing(6);
+    height: 850px;
+  }
+  @include _550 {
+    margin-top: base-spacing(7);
+    height: 750px;
+  }
+  @include __650 {
+    margin-top: base-spacing(7);
+    height: 800px;
+  }
+  @include _800 {
+    margin-top: base-spacing(7);
+  }
+
+  .Rover {
+    grid-area: Rover;
+    border-radius: 30px;
+    grid-gap: 15px;
+    display: grid;
+    padding: base-spacing(2);
+    grid-template-areas: "RoverImg RoverInfo";
+    margin: base-spacing(10) base-spacing(50) 0 base-spacing(50);
+    height: heigth-change(300);
+    background-color: $mars-color-opasity;
+    @include __300 {
+      margin: base-spacing(10) auto;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 250px;
+      height: 600px;
+      grid-template-areas: "RoverImg " "RoverInfo";
+    }
+    @include _400 {
+      margin: base-spacing(10) auto;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 340px;
+      height: 600px;
+      grid-template-areas: "RoverImg " "RoverInfo";
+    }
+    @include _550 {
+      margin: base-spacing(10) auto;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 400px;
+      height: 550px;
+      grid-template-areas: "RoverImg " "RoverInfo";
+      margin: base-spacing(10);
+    }
+    @include __650 {
+      grid-template-rows: 1fr 1fr;
+      height: 550px;
+      grid-template-areas: "RoverImg " "RoverInfo";
+      margin: base-spacing(10);
+    }
+    @include _800 {
+      margin: base-spacing(10) auto;
+    }
+    @include _950 {
+      margin: base-spacing(10) auto;
+    }
+    @include _1050 {
+      margin: base-spacing(10) auto;
+    }
+
+    @include _1200 {
+      margin: base-spacing(10) auto;
+    }
+
+    .RoverImg {
+      width: 300px;
+      height: heigth-change(300);
+      border-radius: 30px;
+      grid-area: RoverImg;
+      @include __300 {
+        width: 100%;
+      }
+      @include _400 {
+        width: 100%;
+      }
+      @include _550 {
+        width: 100%;
+      }
+      @include __650 {
+        width: 100%;
+      }
+    }
+    .RoverInfo {
+      text-align: center;
+      justify-content: center;
+      grid-area: RoverInfo;
+      display: grid;
+      grid-template-rows: 0.5fr 1fr 0.3fr;
+      grid-template-areas: "RoverName" "RoverProperty" "ShowButton";
+
+      .RoverName {
+        text-align: center;
+        grid-area: RoverName;
+        color: $font-color;
+        font-size: font-change(50);
+        font-weight: bold;
+        @include __300 {
+          font-size: font-change(25);
+        }
+        @include _400 {
+          font-size: font-change(25);
+        }
+        @include _550 {
+          font-size: font-change(25);
+        }
+        @include _1050 {
+          font-size: font-change(40);
+        }
+      }
+      .RoverProperty {
+        grid-area: RoverProperty;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "RoverCameras SolDay";
+        @include __300 {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: "RoverCameras" " SolDay";
+        }
+        @include _400 {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: "RoverCameras" " SolDay";
+        }
+        .RoverCameras {
+          grid-area: RoverCameras;
+          .CameraTitle {
+            font-size: font-change(5);
+            color: $font-color;
+          }
+          .Camera {
+            margin-top: base-spacing(3);
+            text-align: center;
+            font-size: font-change(2);
+            width: wigth-change(200);
+            height: heigth-change(50);
+            border-radius: 20px;
+            @include __300 {
+              margin-top: base-spacing(1);
+              height: heigth-change(25);
+              width: wigth-change(130);
+            }
+            @include _400 {
+              margin-top: base-spacing(1);
+              height: heigth-change(25);
+              width: wigth-change(130);
+            }
+            @include _550 {
+              height: heigth-change(30);
+              width: wigth-change(150);
+            }
+            @include __650 {
+              height: heigth-change(30);
+              width: wigth-change(120);
+            }
+          }
+        }
+        .SolDay {
+          grid-area: SolDay;
+          .SolDayTitle {
+            font-size: font-change(5);
+            color: $font-color;
+          }
+          .SolDayInput {
+            border-radius: 20px;
+            font-size: font-change(2);
+            margin-top: base-spacing(3);
+            height: heigth-change(50);
+            @include __300 {
+              margin-top: base-spacing(1);
+              height: heigth-change(25);
+              width: wigth-change(130);
+            }
+            @include _400 {
+              margin-top: base-spacing(1);
+              height: heigth-change(25);
+              width: wigth-change(130);
+            }
+            @include _550 {
+              height: heigth-change(30);
+              width: wigth-change(150);
+            }
+            @include __650 {
+              height: heigth-change(30);
+              width: wigth-change(150);
+            }
+          }
+        }
+      }
+      .ShowButton {
+        cursor: pointer;
+        font-size: font-change(10);
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        background-color: none;
+        color: $mars-color;
+        margin: 0 base-spacing(20);
+        grid-area: ShowButton;
+        width: wigth-change(150);
+        @include __300 {
+          margin-top: base-spacing(5);
+        }
+        @include _400 {
+          margin-top: base-spacing(5);
+        }
+        @include _550 {
+          margin-top: base-spacing(2);
+        }
+        @include __650 {
+          margin-top: base-spacing(2);
+        }
+      }
+    }
+    .Arrow {
+      display: flex;
+      align-items: center;
+    }
+    .ArrowIcon {
+      cursor: pointer;
+      margin-top: base-spacing(5);
+      color: $mars-color;
+
+      font-size: 60px;
+      &:hover {
+        color: white;
+      }
+    }
+    .ArrowTitle {
+      font-weight: 600;
+      height: 50px;
+      text-align: center;
+      cursor: pointer;
+      margin-top: base-spacing(7);
+      color: $mars-color;
+      font-size: 25px;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

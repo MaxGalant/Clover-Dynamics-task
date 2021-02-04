@@ -4,12 +4,14 @@ import Opportunity from "./Img/Opportunity.jpg";
 import Spirit from "./Img/Spirit.jpg";
 import Axios from "axios";
 import { useState } from "react";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Photo from "./Components/Photo";
+import Load from "./Components/Load";
+import ErrorComponent from "./Components/Error";
+import Rover from "./Components/Rover";
 
 function App(props) {
   const [photos, setPhotos] = useState([]);
-  const [Length, setLength] = useState(4);
+  const [Length, setLength] = useState(12);
   function chooseRover(e) {
     let SelectedRover = document.getElementById("SelectedRover");
     let RoverImg = document.getElementById("RoverImg");
@@ -107,6 +109,7 @@ function App(props) {
       photoError3.style.display = "inline";
     }
   }
+
   let newArray = photos.slice(0, Length);
   let Photos = newArray.map((p) => <Photo key={p.id} src={p.img_src} />);
   return (
@@ -143,70 +146,24 @@ function App(props) {
           </div>
         </div>
       </div>
-      <div className={s.SelectedRover} id="SelectedRover">
-        <div className={s.Rover}>
-          <img className={s.RoverImg} src="" id="RoverImg" />
-          <div className={s.RoverInfo}>
-            <div className={s.RoverName} id="RoverName">
-              {" "}
-            </div>
-            <div className={s.RoverProperty}>
-              <div className={s.RoverCameras}>
-                <div className={s.CameraTitle}>Choose a camera</div>
-                <select className={s.Camera} id="camera" onChange={change}>
-                  <option>None</option>
-                  <option>FHAZ</option>
-                  <option>RHAZ</option>
-                  <option>MAST</option>
-                  <option>CHEMCAM</option>
-                  <option>MAHLI</option>
-                  <option>MARDI</option>
-                  <option>NAVCAM</option>
-                  <option>PANCAM</option>
-                  <option>MINITES</option>
-                </select>
-              </div>
-              <div className={s.SolDay}>
-                <div className={s.SolDayTitle}>Input Sol Day</div>
-                <input
-                  className={s.SolDayInput}
-                  id="solInput"
-                  onChange={change}
-                ></input>
-              </div>
-            </div>
-            <button className={s.ShowButton} onClick={SendRequest}>
-              Show
-            </button>
-          </div>
-          <div className={s.Arrow}>
-            <ArrowBackIcon
-              className={s.ArrowIcon}
-              onClick={roverReturn}
-            ></ArrowBackIcon>
-            <span className={s.ArrowTitle} onClick={roverReturn}>
-              Return to Rovers
-            </span>
-          </div>
-        </div>
-      </div>
+
+      <Rover
+        SendRequest={SendRequest}
+        roverReturn={roverReturn}
+        change={change}
+      />
+
       <div className={s.ErrorContainer} id="Error1">
-        <div className={s.Error}>
-          <div className={s.ErrorTitle}>
-            Data on your request does not exist<br/> (possibly the rover does not have this sol day or 
-            this type of camera)
-          </div>
-        </div>
+        <ErrorComponent
+          text={`Data on your request does not exist
+        (possibly the rover does not have this sol day or this type of"`}
+        />
       </div>
       <div className={s.ErrorContainer} id="Error2">
-        <div className={s.Error}>
-          <div className={s.ErrorTitle}>Sol day must be number</div>
-        </div>
+        <ErrorComponent text={"Sol day must be number"} />
       </div>
       <div className={s.ErrorContainer} id="Error3">
-        <div className={s.Error}>
-          <div className={s.ErrorTitle}>Camera can't be NONE</div>
-        </div>
+        <ErrorComponent text={"Camera can't be NONE"} />
       </div>
       <div className={s.PhotosContainer} id="PhotosBlock">
         <div className={s.PhotoBlockTitle}>Photos of Mars </div>
@@ -217,9 +174,7 @@ function App(props) {
         </div>
       </div>
       <div className={s.LoadBlock} id="Load">
-        <button className={s.Load} onClick={loadMore}>
-          Load more
-        </button>
+        <Load loadMore={loadMore} />
       </div>
     </div>
   );
