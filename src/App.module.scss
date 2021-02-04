@@ -274,7 +274,7 @@
       grid-template-areas: "RoverImg RoverInfo";
       margin: base-spacing(10) base-spacing(50) 0 base-spacing(50);
       height: heigth-change(300);
-      background-color: $mars-color;
+      background-color: $mars-color-opasity2;
       @include __650 {
         grid-template-rows: 1fr 1fr;
         height: 550px;
@@ -501,7 +501,7 @@
     .Error {
       margin-top: base-spacing(10);
       display: grid;
-      grid-template-columns: .5fr 1fr .5fr;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
       grid-template-areas: ".ErrorTitle . ";
       .ErrorTitle {
         grid-area: ErrorTitle;
@@ -509,27 +509,25 @@
         color: $mars-color;
         font-size: font-change(10);
         text-align: center;
-        @include _800{
+        @include _800 {
           font-size: font-change(7);
         }
-        @include _650{
+        @include _650 {
           font-size: font-change(6);
         }
-        @include _550{
+        @include _550 {
           font-size: font-change(7);
         }
-        @include _300{
+        @include _300 {
           font-size: font-change(2);
         }
-          
-        
       }
     }
   }
   .PhotosContainer {
-   
     display: none;
-    .PhotoBlockTitle { margin: 80px 0;
+    .PhotoBlockTitle {
+      margin: 80px 0;
       font-weight: 600;
       color: $mars-color;
       font-size: font-change(20);
@@ -540,9 +538,17 @@
       display: grid;
       grid-template-columns: 0.3fr 1248px 0.3fr;
       grid-template-areas: ". Photos .";
-
+      @include _650_1300 {
+        grid-template-columns: 0.3fr 624px 0.3fr;
+      }
+      @include _550_650 {
+        grid-template-columns: 0.3fr 312px 0.3fr;
+      }
+      @include _300 {
+        grid-template-columns: 0.3fr 212px 0.3fr;
+      }
       .Photos {
-       text-align: center;
+        text-align: center;
         grid-area: Photos;
       }
     }
