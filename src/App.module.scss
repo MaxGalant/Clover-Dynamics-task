@@ -9,12 +9,15 @@
   background-size: cover;
 }
 %RoverCard {
-  background-color: $mars-color;
+  background-color: $mars-color-opasity;
+
   text-align: center;
-  border: 2px solid $mars-color;
+  border: 7px solid $mars-color;
   width: 100%;
   height: 100%;
+
   .RoverBlockImg {
+    opacity: 1;
     width: 100%;
     height: heigth-change(200);
   }
@@ -23,6 +26,11 @@
     color: $font-color;
     font-size: font-change(10);
     font-weight: bold;
+    @include _650 {
+     
+
+      margin-top: base-spacing(1);
+    }
   }
   .RoverBlockButton {
     cursor: pointer;
@@ -49,7 +57,7 @@
     @include _650 {
       width: wigth-change(180);
 
-      margin-top: base-spacing(2);
+      margin-top: base-spacing(1);
     }
     margin-top: base-spacing(5);
     border-radius: 25px;
@@ -63,91 +71,154 @@
     height: heigth-change(800);
     margin-top: base-spacing(5);
     background-image: url(./Img/Mars.gif);
-    @include _1200{
-      
+    @include _1200 {
       background-size: 100%;
       height: heigth-change(550);
-    }  
-    @include _1050{
-      
+    }
+    @include _1050 {
       background-size: 100%;
       height: heigth-change(470);
-    }  
-    @include _800{
-      
+    }
+    @include _800 {
       background-size: 100%;
       height: heigth-change(350);
-    }  
-    @include _650{ 
+    }
+    @include _650 {
       background-size: 100%;
       height: heigth-change(270);
-    } 
-    @include _550{ 
+    }
+    @include _550 {
       background-size: 100%;
       height: heigth-change(230);
-    } 
-    @include _300{ 
+    }
+    @include _300 {
       background-size: 100% auto;
-      height: heigth-change(110);
-    } 
+      height: heigth-change(130);
+    }
     background-repeat: no-repeat;
     @extend %maxWidth;
     @extend %coverBackgroundSize;
   }
-  .RoverBlock {
+  .RoverBlockContainer {
     display: grid;
-    margin: base-spacing(10) base-spacing(30) 0 base-spacing(30);
-    @include _1200 {
-      margin: base-spacing(10) base-spacing(15) 0 base-spacing(15);
+    margin-top: base-spacing(10);
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
+    grid-template-areas: ". RoverBlockTitle ." ". RoverBlock ." ". . .";
+    background-repeat: no-repeat;
+    height: 700px;
+    justify-content: space-between;
+    background-image: url(./Img/bg-1.jpg);
+    @include _400_800 {
+      margin-top: base-spacing(6);
+      grid-template-areas: ". RoverBlockTitle ." ". RoverBlock ." ". . .";
+      height: 1200px;
+      grid-template-columns: 0.3fr 1fr 0.3fr;
+      grid-template-rows: 80px 1fr 50px;
     }
-    @include _1050 {
-      margin: base-spacing(10) base-spacing(10) 0 base-spacing(10);
-    }
-    height: heigth-change(400);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 80px;
-    @include _800 {
-      margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
-      grid-column-gap: 50px;
-    }
-    grid-template-areas: "Rover1 Rover2 Rover3";
 
-    @include _650 {
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-columns: 0.5fr 1fr 0.5fr;
-      margin: base-spacing(10) auto;
-
-      grid-row-gap: 40px;
-      grid-column-gap: 0;
-      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
-    }
-    @include _550 {
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-columns: 0.5fr 1fr 0.5fr;
-      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
-      grid-row-gap: 40px;
-      grid-column-gap: 0;
-      margin: base-spacing(10) auto;
-    }
-    @include _300 {
-      grid-template-rows: 1fr 1fr 1fr;
+    @include __300 {
+      margin-top: base-spacing(5);
+      height: 1200px;
       grid-template-columns: 0.1fr 1fr 0.1fr;
-      grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
-      grid-row-gap: 40px;
-      grid-column-gap: 0;
-      margin: base-spacing(10) auto;
+      grid-template-rows: 10px 1500px 50px;
     }
-    .Rover1 {
-      grid-area: Rover1;
-      @extend %RoverCard;
+    .RoverBlockTitle {
+      align-items: center;
+      display: grid;
+      grid-template-columns: 0.23fr 1fr;
+      grid-template-areas: ". LineTextBlock";
+      font-weight: bold;
+      font-size: font-change(20);
+      color: $mars-color;
+      grid-area: RoverBlockTitle;
+      @include _1200 {
+        grid-template-columns: 0.13fr 1fr;
+      }
+      @include _1050 {
+        grid-template-columns: 0.09fr 1fr;
+      }
+      @include _800 {
+        grid-template-columns: 0.06fr 1fr;
+      }
+      @include _650 {
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: " LineTextBlock";
+      }
+      .LineTextBlock {
+        grid-area: LineTextBlock;
+        padding-bottom: 20px;
+        width: 250px;
+        border-bottom: 6px solid $mars-color;
+
+        @include _650 {
+          text-align: center;
+        }
+      }
     }
-    .Rover2 {
-      grid-area: Rover2;
-      @extend %RoverCard;
-    }
-    .Rover3 {
-      grid-area: Rover3;
-      @extend %RoverCard;
+    .RoverBlock {
+      grid-area: RoverBlock;
+      background-size: contain;
+    
+      display: grid;
+      margin: 0 base-spacing(30) 0 base-spacing(30);
+      @include _1200 {
+        margin: base-spacing(10) base-spacing(15) 0 base-spacing(15);
+      }
+      @include _1050 {
+        margin: base-spacing(10) base-spacing(10) 0 base-spacing(10);
+      }
+
+      @include _400_800 {
+        height: heigth-change(200);
+      }
+      height: heigth-change(400);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 80px;
+      @include _800 {
+        margin: base-spacing(10) base-spacing(5) 0 base-spacing(5);
+        grid-column-gap: 50px;
+      }
+      grid-template-areas: "Rover1 Rover2 Rover3";
+
+      @include _650 {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        margin: base-spacing(10) auto;
+        justify-content: space-between;
+        grid-row-gap: 30px;
+        grid-column-gap: 0;
+        grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+      }
+      @include _550 {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 0.3fr 1fr 0.3fr;
+        grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+        grid-row-gap: 40px;
+        grid-column-gap: 0;
+        margin: base-spacing(10) auto;
+      }
+      @include _300 {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+        grid-template-areas: ". Rover1 ." " . Rover2 ." " . Rover3 .";
+        grid-row-gap: 40px;
+        grid-column-gap: 0;
+        margin: base-spacing(10) auto;
+      }
+      .Rover1 {
+        grid-area: Rover1;
+        @extend %RoverCard;
+      }
+      .Rover2 {
+        grid-area: Rover2;
+        @extend %RoverCard;
+      }
+      .Rover3 {
+        grid-area: Rover3;
+        @extend %RoverCard;
+      }
     }
   }
   .SelectedRover {
@@ -191,21 +262,19 @@
         grid-template-areas: "RoverImg " "RoverInfo";
         margin: base-spacing(10);
       }
-      @include _400{
+      @include _400 {
         margin: base-spacing(10) auto;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 340px;
         height: 600px;
         grid-template-areas: "RoverImg " "RoverInfo";
-        
       }
-      @include __300{
+      @include __300 {
         margin: base-spacing(10) auto;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 250px;
         height: 600px;
         grid-template-areas: "RoverImg " "RoverInfo";
-        
       }
 
       .RoverImg {
@@ -214,15 +283,12 @@
         }
         @include _550 {
           width: 100%;
-
         }
         @include __300 {
           width: 100%;
-
         }
         @include _400 {
           width: 100%;
-
         }
         width: 300px;
         height: heigth-change(300);
@@ -242,9 +308,15 @@
           grid-area: RoverName;
           color: $font-color;
           font-size: font-change(50);
-          @include _550 { font-size: font-change(25);}
-          @include __300 { font-size: font-change(25);}
-          @include _400 { font-size: font-change(25);}
+          @include _550 {
+            font-size: font-change(25);
+          }
+          @include __300 {
+            font-size: font-change(25);
+          }
+          @include _400 {
+            font-size: font-change(25);
+          }
           @include _1050 {
             font-size: font-change(40);
           }
@@ -252,15 +324,15 @@
           font-weight: bold;
         }
         .RoverProperty {
-          @include __300{
+          @include __300 {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
-            grid-template-areas: "RoverCameras"" SolDay";
+            grid-template-areas: "RoverCameras" " SolDay";
           }
-          @include _400{
+          @include _400 {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
-            grid-template-areas: "RoverCameras"" SolDay";
+            grid-template-areas: "RoverCameras" " SolDay";
           }
           grid-area: RoverProperty;
           display: grid;
@@ -285,13 +357,11 @@
                 margin-top: base-spacing(1);
                 height: heigth-change(25);
                 width: wigth-change(130);
-             
               }
               @include __300 {
                 margin-top: base-spacing(1);
                 height: heigth-change(25);
                 width: wigth-change(130);
-             
               }
               margin-top: base-spacing(3);
               text-align: center;
@@ -401,10 +471,9 @@
       display: grid;
       grid-template-columns: 1fr 0.7fr 1fr;
       grid-template-areas: ". Photos .";
-      
-      @include _300{
+
+      @include _300 {
         grid-template-columns: 1fr 280px 1fr;
-        
       }
     }
     .Photos {
@@ -426,34 +495,34 @@
     margin-top: base-spacing(7);
     display: none;
     grid-template-columns: 1fr 0.3fr 1fr;
-    @include _300{
+    @include _300 {
       grid-template-columns: 1fr 100px 1fr;
     }
-    @include _550{
+    @include _550 {
       grid-template-columns: 1fr 100px 1fr;
     }
-    @include _650{
+    @include _650 {
       grid-template-columns: 1fr 100px 1fr;
     }
-    @include _800{
+    @include _800 {
       grid-template-columns: 1fr 100px 1fr;
     }
     grid-template-areas: ". Load .";
     .Load {
-      @include _1050{
-        font-size: 20px;     
+      @include _1050 {
+        font-size: 20px;
       }
-      @include _800{
-        font-size: 16px;     
+      @include _800 {
+        font-size: 16px;
       }
-      @include _650{
-        font-size: 16px;     
+      @include _650 {
+        font-size: 16px;
       }
-      @include _550{
-        font-size: 16px;     
+      @include _550 {
+        font-size: 16px;
       }
-      @include _300{
-        font-size: 16px;     
+      @include _300 {
+        font-size: 16px;
       }
       font-weight: 600;
       border-radius: 20px;
@@ -462,8 +531,6 @@
       grid-area: Load;
       color: $mars-color;
       font-size: 25px;
-
-      
     }
   }
 }

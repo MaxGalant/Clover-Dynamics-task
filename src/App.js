@@ -91,31 +91,34 @@ function App(props) {
   return (
     <div className={s.App}>
       <div className={s.MarsTheme}></div>
-      <div className={s.RoverBlock} id="RoverBlock">
-        <div className={s.Rover1}>
-          <img className={s.RoverBlockImg} src={Curiosity} />
-          <div className={s.RoverBlockName}>Curiosity</div>
-          <button className={s.RoverBlockButton} onClick={chooseRover}>
-            Select
-          </button>
-        </div>
-        <div className={s.Rover2}>
-          <img className={s.RoverBlockImg} src={Opportunity} />
-          <div className={s.RoverBlockName}>Opportunity</div>
-          <button className={s.RoverBlockButton} onClick={chooseRover}>
-            Select
-          </button>
-        </div>
-        <div className={s.Rover3}>
-          <img className={s.RoverBlockImg} src={Spirit} />
-          <div className={s.RoverBlockName}>Spirit</div>
+      <div className={s.RoverBlockContainer}id="RoverBlock">
+        <div className={s.RoverBlockTitle}><div className={s.LineTextBlock}><div className={s.LineText}>Select Rover</div></div>
+       </div>
+        <div className={s.RoverBlock} >
+          <div className={s.Rover1}>
+            <img className={s.RoverBlockImg} src={Curiosity} />
+            <div className={s.RoverBlockName}>Curiosity</div>
+            <button className={s.RoverBlockButton} onClick={chooseRover}>
+              Select
+            </button>
+          </div>
+          <div className={s.Rover2}>
+            <img className={s.RoverBlockImg} src={Opportunity} />
+            <div className={s.RoverBlockName}>Opportunity</div>
+            <button className={s.RoverBlockButton} onClick={chooseRover}>
+              Select
+            </button>
+          </div>
+          <div className={s.Rover3}>
+            <img className={s.RoverBlockImg} src={Spirit} />
+            <div className={s.RoverBlockName}>Spirit</div>
 
-          <button className={s.RoverBlockButton} onClick={chooseRover}>
-            Select
-          </button>
+            <button className={s.RoverBlockButton} onClick={chooseRover}>
+              Select
+            </button>
+          </div>
         </div>
       </div>
-
       <div className={s.SelectedRover} id="SelectedRover">
         <div className={s.Rover}>
           <img className={s.RoverImg} src="" id="RoverImg" />
