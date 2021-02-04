@@ -25,10 +25,15 @@
     margin-top: base-spacing(2);
     color: $font-color;
     font-size: font-change(10);
-    font-weight: bold;
-    @include _650 {
-     
 
+    font-weight: bold;
+    @include _300 {
+      margin-top: base-spacing(1);
+    }
+    @include _650 {
+      margin-top: base-spacing(1);
+    }
+    @include _550 {
       margin-top: base-spacing(1);
     }
   }
@@ -46,7 +51,7 @@
     background-color: $font-color;
     @include _300 {
       width: wigth-change(160);
-      margin-top: base-spacing(2);
+      margin-top: base-spacing(1);
     }
 
     @include _550 {
@@ -114,7 +119,7 @@
       grid-template-areas: ". RoverBlockTitle ." ". RoverBlock ." ". . .";
       height: 1200px;
       grid-template-columns: 0.3fr 1fr 0.3fr;
-      grid-template-rows: 80px 1fr 50px;
+      grid-template-rows: 20px 1fr 50px;
     }
 
     @include __300 {
@@ -142,6 +147,21 @@
         grid-template-columns: 0.06fr 1fr;
       }
       @include _650 {
+        text-align: center;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: " LineTextBlock";
+      }
+      @include _550 {
+        text-align: center;
+
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: " LineTextBlock";
+      }
+      @include _300 {
+        text-align: center;
+
         margin: 0 auto;
         grid-template-columns: 1fr;
         grid-template-areas: " LineTextBlock";
