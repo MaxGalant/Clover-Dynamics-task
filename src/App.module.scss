@@ -278,7 +278,8 @@
         margin: 80px 0;
         font-weight: 600;
         color: $mars-color;
-        font-size: font-change(20);
+        -webkit-text-stroke: black 2px;
+        font-size: font-change(30);
         text-align: center;
       }
       .PhotosBlock {
