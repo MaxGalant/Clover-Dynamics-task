@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Clover-Dynamics-task/static/css/main.39a4b8b3.chunk.css",
-    "main.js": "/Clover-Dynamics-task/static/js/main.f685e7a1.chunk.js",
-    "main.js.map": "/Clover-Dynamics-task/static/js/main.f685e7a1.chunk.js.map",
-    "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.11005d4e.js",
-    "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.11005d4e.js.map",
-    "static/js/2.195de2cb.chunk.js": "/Clover-Dynamics-task/static/js/2.195de2cb.chunk.js",
-    "static/js/2.195de2cb.chunk.js.map": "/Clover-Dynamics-task/static/js/2.195de2cb.chunk.js.map",
-    "static/js/3.7c6520ce.chunk.js": "/Clover-Dynamics-task/static/js/3.7c6520ce.chunk.js",
-    "static/js/3.7c6520ce.chunk.js.map": "/Clover-Dynamics-task/static/js/3.7c6520ce.chunk.js.map",
+    "main.css": "/Clover-Dynamics-task/static/css/main.5a041872.chunk.css",
+    "main.js": "/Clover-Dynamics-task/static/js/main.6ae4fa11.chunk.js",
+    "main.js.map": "/Clover-Dynamics-task/static/js/main.6ae4fa11.chunk.js.map",
+    "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.c80b51c7.js",
+    "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.c80b51c7.js.map",
+    "static/js/2.966fd69c.chunk.js": "/Clover-Dynamics-task/static/js/2.966fd69c.chunk.js",
+    "static/js/2.966fd69c.chunk.js.map": "/Clover-Dynamics-task/static/js/2.966fd69c.chunk.js.map",
+    "static/js/3.5c28fcf2.chunk.js": "/Clover-Dynamics-task/static/js/3.5c28fcf2.chunk.js",
+    "static/js/3.5c28fcf2.chunk.js.map": "/Clover-Dynamics-task/static/js/3.5c28fcf2.chunk.js.map",
     "index.html": "/Clover-Dynamics-task/index.html",
-    "static/css/main.39a4b8b3.chunk.css.map": "/Clover-Dynamics-task/static/css/main.39a4b8b3.chunk.css.map",
-    "static/js/2.195de2cb.chunk.js.LICENSE.txt": "/Clover-Dynamics-task/static/js/2.195de2cb.chunk.js.LICENSE.txt",
+    "static/css/main.5a041872.chunk.css.map": "/Clover-Dynamics-task/static/css/main.5a041872.chunk.css.map",
+    "static/js/2.966fd69c.chunk.js.LICENSE.txt": "/Clover-Dynamics-task/static/js/2.966fd69c.chunk.js.LICENSE.txt",
     "static/media/App.module.scss": "/Clover-Dynamics-task/static/media/bg-1.ec39f4a4.jpg",
     "static/media/curiosity.08d28769.jpg": "/Clover-Dynamics-task/static/media/curiosity.08d28769.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.11005d4e.js",
-    "static/js/2.195de2cb.chunk.js",
-    "static/css/main.39a4b8b3.chunk.css",
-    "static/js/main.f685e7a1.chunk.js"
+    "static/js/runtime-main.c80b51c7.js",
+    "static/js/2.966fd69c.chunk.js",
+    "static/css/main.5a041872.chunk.css",
+    "static/js/main.6ae4fa11.chunk.js"
   ]
 }
