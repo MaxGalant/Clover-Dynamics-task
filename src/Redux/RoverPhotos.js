@@ -4,7 +4,7 @@ const SET_PHOTOS = "RoverPhotos/SET_PHOTOS";
 
 let InitialState={
   Photos:[],
-  lpStatus:"201"
+ 
 }
 const PhotosReduser=(State=InitialState,action)=>{
     switch (action.type){

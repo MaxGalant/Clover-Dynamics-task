@@ -242,9 +242,23 @@
     }
   }
   .SelectedRover {
+    background-image: url(./Img/bg-1.jpg);
+    height: 600px;
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: ". Rover .";
+    @include __650 {
+      height: 800px;
+    }
+    @include _550 {
+      height: 750px;
+    }
+    @include _400 {
+      height: 850px;
+    }
+    @include __300 {
+      height: 850px;
+    }
     .Rover {
       grid-area: Rover;
       border-radius: 30px;
@@ -456,15 +470,22 @@
         cursor: pointer;
         margin-top: base-spacing(5);
         color: $mars-color;
-        font-size: 50px;
+        
+        font-size: 60px;
+        &:hover{
+          color: white;
+        }
       }
-      .ArrowTitle {
+      .ArrowTitle {font-weight: 600;
         height: 50px;
         text-align: center;
         cursor: pointer;
         margin-top: base-spacing(7);
         color: $mars-color;
-        font-size: 20px;
+        font-size: 25px;
+        &:hover{
+          color: white;
+        }
       }
     }
   }
