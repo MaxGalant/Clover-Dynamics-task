@@ -53,10 +53,11 @@ function App(props) {
     setPhotos([]);
   }
   function loadMore() {
-    setLength(Length + 4);
-    if (Length + 4 > photos.length) {
+    if (Length + 4 >= photos.length) {
       let load = document.getElementById("Load");
       load.style.display = "none";
+    } else {
+      setLength(Length + 4);
     }
   }
   function SendRequest(event) {
@@ -69,11 +70,11 @@ function App(props) {
     let sol = document.getElementById("solInput");
     let load = document.getElementById("Load");
 
-    if (window.innerWidth>800) {
+    if (window.innerWidth > 800) {
       window.scrollBy(0, event.clientY + 50);
-    }
-    else if (window.innerWidth>500&&window.innerWidth<800) {window.scrollBy(0, event.clientY + 30);}
-    else if(window.innerWidth<500){
+    } else if (window.innerWidth > 500 && window.innerWidth < 800) {
+      window.scrollBy(0, event.clientY + 30);
+    } else if (window.innerWidth < 500) {
       window.scrollBy(0, event.clientY + 20);
     }
     if (camera.value !== "None") {
@@ -86,7 +87,7 @@ function App(props) {
           }&api_key=rHOBuDjqX5lc2JJc2TDc2nJBc2hZbT08qNXlb0Gv`
         ).then((Response) => {
           setPhotos(Response.data.photos);
-          if (Response.data.photos.length > 4) {
+          if (Response.data.photos.length > 12) {
             load.style.display = "grid";
           }
           if (Response.data.photos.length > 0) {
@@ -171,17 +172,18 @@ function App(props) {
         <ErrorComponent text={"Camera can't be NONE"} />
       </div>
       <div className={s.PhotosContainer} id="PhotosBlock">
-        <div className={s.PhotoBlockTitle}>Photos of Mars </div>
-        <div className={s.PhotosBlock}>
-          <div className={s.Photos}>
-            <div> {Photos}</div>
+        <div className={s.PhotosBlockContainer}>
+          <div className={s.PhotoBlockTitle}>Photos of Mars </div>
+          <div className={s.PhotosBlock}>
+            <div className={s.Photos}>
+              <div> {Photos}</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={s.LoadBlock} id="Load">
         <Load loadMore={loadMore} />
       </div>
-   
     </div>
   );
 }

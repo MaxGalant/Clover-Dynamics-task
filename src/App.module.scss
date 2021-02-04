@@ -268,32 +268,38 @@
     }
   }
   .PhotosContainer {
+    
     display: none;
-    .PhotoBlockTitle {
-      margin: 80px 0;
-      font-weight: 600;
-      color: $mars-color;
-      font-size: font-change(20);
-      text-align: center;
-    }
-    .PhotosBlock {
-      justify-content: center;
-      display: grid;
-      grid-template-columns: 0.3fr 1272px 0.3fr;
-      grid-template-areas: ". Photos .";
-      @include _300 {
-        grid-template-columns: 0.3fr 212px 0.3fr;
-      }
-      @include _550_650 {
-        grid-template-columns: 0.3fr 312px 0.3fr;
-      }
-      @include _650_1300 {
-        grid-template-columns: 0.3fr 648px 0.3fr;
-      }
-
-      .Photos {
+    .PhotosBlockContainer {background-image: url(./Img/bg-2.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      .PhotoBlockTitle {
+        margin: 80px 0;
+        font-weight: 600;
+        color: $mars-color;
+        font-size: font-change(20);
         text-align: center;
-        grid-area: Photos;
+      }
+      .PhotosBlock {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 0.3fr 1272px 0.3fr;
+        grid-template-areas: ". Photos .";
+        @include _300 {
+          grid-template-columns: 0.3fr 212px 0.3fr;
+        }
+        @include _550_650 {
+          grid-template-columns: 0.3fr 312px 0.3fr;
+        }
+        @include _650_1300 {
+          grid-template-columns: 0.3fr 648px 0.3fr;
+        }
+
+        .Photos {
+          text-align: center;
+          grid-area: Photos;
+        }
       }
     }
   }
