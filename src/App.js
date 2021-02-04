@@ -188,7 +188,7 @@ function App(props) {
       <div className={s.ErrorContainer} id="Error1">
         <div className={s.Error}>
           <div className={s.ErrorTitle}>
-            Data on your request does not exist (possibly the rover does not have this sol day or 
+            Data on your request does not exist<br/> (possibly the rover does not have this sol day or 
             this type of camera)
           </div>
         </div>

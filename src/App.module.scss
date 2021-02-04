@@ -501,7 +501,7 @@
     .Error {
       margin-top: base-spacing(10);
       display: grid;
-      grid-template-columns: 1fr 0.8fr 1fr;
+      grid-template-columns: .5fr 1fr .5fr;
       grid-template-areas: ".ErrorTitle . ";
       .ErrorTitle {
         grid-area: ErrorTitle;
