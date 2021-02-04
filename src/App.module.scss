@@ -154,14 +154,12 @@
       }
       @include _550 {
         text-align: center;
-
         margin: 0 auto;
         grid-template-columns: 1fr;
         grid-template-areas: " LineTextBlock";
       }
       @include _300 {
         text-align: center;
-
         margin: 0 auto;
         grid-template-columns: 1fr;
         grid-template-areas: " LineTextBlock";
@@ -180,7 +178,7 @@
     .RoverBlock {
       grid-area: RoverBlock;
       background-size: contain;
-    
+
       display: grid;
       margin: 0 base-spacing(30) 0 base-spacing(30);
       @include _1200 {
@@ -244,19 +242,27 @@
   .SelectedRover {
     background-image: url(./Img/bg-1.jpg);
     height: 600px;
+    margin-top: base-spacing(10);
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: ". Rover .";
+    @include _800 {
+      margin-top: base-spacing(7);
+    }
     @include __650 {
+      margin-top: base-spacing(7);
       height: 800px;
     }
     @include _550 {
+      margin-top: base-spacing(7);
       height: 750px;
     }
     @include _400 {
+      margin-top: base-spacing(6);
       height: 850px;
     }
     @include __300 {
+      margin-top: base-spacing(5);
       height: 850px;
     }
     .Rover {
@@ -470,20 +476,21 @@
         cursor: pointer;
         margin-top: base-spacing(5);
         color: $mars-color;
-        
+
         font-size: 60px;
-        &:hover{
+        &:hover {
           color: white;
         }
       }
-      .ArrowTitle {font-weight: 600;
+      .ArrowTitle {
+        font-weight: 600;
         height: 50px;
         text-align: center;
         cursor: pointer;
         margin-top: base-spacing(7);
         color: $mars-color;
         font-size: 25px;
-        &:hover{
+        &:hover {
           color: white;
         }
       }
@@ -502,32 +509,41 @@
         color: $mars-color;
         font-size: font-change(10);
         text-align: center;
+        @include _800{
+          font-size: font-change(7);
+        }
+        @include _650{
+          font-size: font-change(6);
+        }
+        @include _550{
+          font-size: font-change(7);
+        }
+        @include _300{
+          font-size: font-change(2);
+        }
+          
+        
       }
     }
   }
   .PhotosContainer {
+   
     display: none;
+    .PhotoBlockTitle { margin: 80px 0;
+      font-weight: 600;
+      color: $mars-color;
+      font-size: font-change(20);
+      text-align: center;
+    }
     .PhotosBlock {
-      margin-top: base-spacing(10);
+      justify-content: center;
       display: grid;
-      grid-template-columns: 1fr 0.7fr 1fr;
+      grid-template-columns: 0.3fr 1248px 0.3fr;
       grid-template-areas: ". Photos .";
 
-      @include _300 {
-        grid-template-columns: 1fr 280px 1fr;
-      }
-    }
-    .Photos {
-      font-weight: 500;
-      color: $mars-color;
-      font-size: font-change(10);
-      text-align: center;
-      grid-area: Photos;
-      .Photo {
-        border: 3px solid $mars-color;
-        width: wigth-change(300);
-        height: heigth-change(300);
-        margin-top: base-spacing(10);
+      .Photos {
+       text-align: center;
+        grid-area: Photos;
       }
     }
   }

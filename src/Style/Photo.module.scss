@@ -1,0 +1,11 @@
+@import "../Style/settings.scss";
+@import "../Style/tools.scss";
+@import "../Style/media_mixin.scss";
+.PhotoBlock {
+    margin: 6px;
+    display: inline-flex;
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}

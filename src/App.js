@@ -5,10 +5,11 @@ import Spirit from "./Img/Spirit.jpg";
 import Axios from "axios";
 import { useState } from "react";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import Photo from "./Components/Photo";
 
 function App(props) {
   const [photos, setPhotos] = useState([]);
-  const [Length, setLength] = useState(5);
+  const [Length, setLength] = useState(4);
   function chooseRover(e) {
     let SelectedRover = document.getElementById("SelectedRover");
     let RoverImg = document.getElementById("RoverImg");
@@ -46,55 +47,73 @@ function App(props) {
     setPhotos([]);
   }
   function loadMore() {
-    setLength(Length + 5);
+    setLength(Length + 4);
     console.log(Length);
-    if (Length + 5 > photos.length) {
+    if (Length + 4 > photos.length) {
       let load = document.getElementById("Load");
       load.style.display = "none";
     }
   }
   function SendRequest() {
     let block = document.getElementById("PhotosBlock");
-    let photoError = document.getElementById("Error");
+    let photoError1 = document.getElementById("Error1");
+    let photoError2 = document.getElementById("Error2");
+    let photoError3 = document.getElementById("Error3");
     let name = document.getElementById("RoverName");
     let camera = document.getElementById("camera");
     let sol = document.getElementById("solInput");
     let load = document.getElementById("Load");
-    Axios.get(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/${
-        name.innerHTML
-      }/photos?sol=${Number.parseInt(sol.value)}&camera=${
-        camera.value
-      }&api_key=rHOBuDjqX5lc2JJc2TDc2nJBc2hZbT08qNXlb0Gv`
-    ).then((Response) => {
-      setPhotos(Response.data.photos);
-      if (Response.data.photos.length > 5) {
-        load.style.display = "grid";
-      }
-      if (Response.data.photos.length > 0) {
-        photoError.style.display = "none";
-        block.style.display = "inline";
+
+    if (camera.value !== "None") {
+      if (!isNaN(sol.value)) {
+        Axios.get(
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${
+            name.innerHTML
+          }/photos?sol=${Number.parseInt(sol.value)}&camera=${
+            camera.value
+          }&api_key=rHOBuDjqX5lc2JJc2TDc2nJBc2hZbT08qNXlb0Gv`
+        ).then((Response) => {
+          setPhotos(Response.data.photos);
+          if (Response.data.photos.length > 4) {
+            load.style.display = "grid";
+          }
+          if (Response.data.photos.length > 0) {
+            photoError1.style.display = "none";
+            photoError2.style.display = "none";
+            photoError3.style.display = "none";
+            block.style.display = "inline";
+          } else {
+            block.style.display = "none";
+            photoError2.style.display = "none";
+            photoError3.style.display = "none";
+            photoError1.style.display = "inline";
+          }
+        });
       } else {
         block.style.display = "none";
-        photoError.style.display = "inline";
+        photoError2.style.display = "inline";
+        photoError1.style.display = "none";
+        photoError3.style.display = "none";
       }
-    });
+    } else {
+      block.style.display = "none";
+      photoError1.style.display = "none";
+      photoError2.style.display = "none";
+      photoError3.style.display = "inline";
+    }
   }
   let newArray = photos.slice(0, Length);
-  let Photos = newArray.map((p) => {
-    return (
-      <div key={p.id}>
-        <img className={s.Photo} src={p.img_src} />
-      </div>
-    );
-  });
+  let Photos = newArray.map((p) => <Photo key={p.id} src={p.img_src} />);
   return (
     <div className={s.App}>
       <div className={s.MarsTheme}></div>
-      <div className={s.RoverBlockContainer}id="RoverBlock">
-        <div className={s.RoverBlockTitle}><div className={s.LineTextBlock}><div className={s.LineText}>Select Rover</div></div>
-       </div>
-        <div className={s.RoverBlock} >
+      <div className={s.RoverBlockContainer} id="RoverBlock">
+        <div className={s.RoverBlockTitle}>
+          <div className={s.LineTextBlock}>
+            <div className={s.LineText}>Select Rover</div>
+          </div>
+        </div>
+        <div className={s.RoverBlock}>
           <div className={s.Rover1}>
             <img className={s.RoverBlockImg} src={Curiosity} />
             <div className={s.RoverBlockName}>Curiosity</div>
@@ -166,18 +185,28 @@ function App(props) {
           </div>
         </div>
       </div>
-      <div className={s.ErrorContainer} id="Error">
+      <div className={s.ErrorContainer} id="Error1">
         <div className={s.Error}>
           <div className={s.ErrorTitle}>
-            Data on your request does not exist (possibly the wrong sol or rover
-            does not have this type of camera)
+            Data on your request does not exist (possibly the rover does not have this sol day or 
+            this type of camera)
           </div>
         </div>
       </div>
+      <div className={s.ErrorContainer} id="Error2">
+        <div className={s.Error}>
+          <div className={s.ErrorTitle}>Sol day must be number</div>
+        </div>
+      </div>
+      <div className={s.ErrorContainer} id="Error3">
+        <div className={s.Error}>
+          <div className={s.ErrorTitle}>Camera can't be NONE</div>
+        </div>
+      </div>
       <div className={s.PhotosContainer} id="PhotosBlock">
+        <div className={s.PhotoBlockTitle}>Photos of Mars </div>
         <div className={s.PhotosBlock}>
           <div className={s.Photos}>
-            <div className={s.PhotoBlockTitle}>The surface of Mars </div>
             <div> {Photos}</div>
           </div>
         </div>
