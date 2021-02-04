@@ -281,6 +281,9 @@
         -webkit-text-stroke: black 2px;
         font-size: font-change(30);
         text-align: center;
+        @include _300{
+          font-size: font-change(20);
+        }
       }
       .PhotosBlock {
         justify-content: center;
