@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Clover-Dynamics-task/static/css/main.780d486d.chunk.css",
-    "main.js": "/Clover-Dynamics-task/static/js/main.151c374b.chunk.js",
-    "main.js.map": "/Clover-Dynamics-task/static/js/main.151c374b.chunk.js.map",
+    "main.js": "/Clover-Dynamics-task/static/js/main.fcbb1fd4.chunk.js",
+    "main.js.map": "/Clover-Dynamics-task/static/js/main.fcbb1fd4.chunk.js.map",
     "runtime-main.js": "/Clover-Dynamics-task/static/js/runtime-main.310ce7e3.js",
     "runtime-main.js.map": "/Clover-Dynamics-task/static/js/runtime-main.310ce7e3.js.map",
     "static/js/2.fe96ce9d.chunk.js": "/Clover-Dynamics-task/static/js/2.fe96ce9d.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.310ce7e3.js",
     "static/js/2.fe96ce9d.chunk.js",
     "static/css/main.780d486d.chunk.css",
-    "static/js/main.151c374b.chunk.js"
+    "static/js/main.fcbb1fd4.chunk.js"
   ]
 }
