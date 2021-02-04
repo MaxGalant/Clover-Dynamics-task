@@ -8,7 +8,6 @@ import Photo from "./Components/Photo";
 import Load from "./Components/Load";
 import ErrorComponent from "./Components/Error";
 import Rover from "./Components/Rover";
-
 function App(props) {
   const [photos, setPhotos] = useState([]);
   const [Length, setLength] = useState(12);
@@ -55,13 +54,12 @@ function App(props) {
   }
   function loadMore() {
     setLength(Length + 4);
-    console.log(Length);
     if (Length + 4 > photos.length) {
       let load = document.getElementById("Load");
       load.style.display = "none";
     }
   }
-  function SendRequest() {
+  function SendRequest(event) {
     let block = document.getElementById("PhotosBlock");
     let photoError1 = document.getElementById("Error1");
     let photoError2 = document.getElementById("Error2");
@@ -71,6 +69,13 @@ function App(props) {
     let sol = document.getElementById("solInput");
     let load = document.getElementById("Load");
 
+    if (window.innerWidth>800) {
+      window.scrollBy(0, event.clientY + 50);
+    }
+    else if (window.innerWidth>500&&window.innerWidth<800) {window.scrollBy(0, event.clientY + 30);}
+    else if(window.innerWidth<500){
+      window.scrollBy(0, event.clientY + 20);
+    }
     if (camera.value !== "None") {
       if (!isNaN(sol.value)) {
         Axios.get(
@@ -176,6 +181,7 @@ function App(props) {
       <div className={s.LoadBlock} id="Load">
         <Load loadMore={loadMore} />
       </div>
+   
     </div>
   );
 }

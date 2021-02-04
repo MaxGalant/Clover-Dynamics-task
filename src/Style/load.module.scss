@@ -1,0 +1,27 @@
+@import "../Style/settings.scss";
+@import "../Style/tools.scss";
+@import "../Style/media_mixin.scss";
+.Load {
+  font-weight: 600;
+  border-radius: 20px;
+  height: 50px;
+  background: none;
+  grid-area: Load;
+  color: $mars-color;
+  font-size: 25px;
+  @include _300 {
+    font-size: 16px;
+  }
+  @include _550 {
+    font-size: 16px;
+  }
+  @include _650 {
+    font-size: 16px;
+  }
+  @include _800 {
+    font-size: 16px;
+  }
+  @include _1050 {
+    font-size: 20px;
+  }
+}
