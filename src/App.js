@@ -36,12 +36,17 @@ function App(props) {
     let SelectedRover = document.getElementById("SelectedRover");
     let RoverBlock = document.getElementById("RoverBlock");
     let block = document.getElementById("PhotosBlock");
-    let photoError = document.getElementById("Error");
+    let photoError1 = document.getElementById("Error1");
+    let photoError2 = document.getElementById("Error2");
+    let photoError3 = document.getElementById("Error3");
+
     camera.value = "None";
     sol.value = "";
     load.style.display = "none";
     block.style.display = "none";
-    photoError.style.display = "none";
+    photoError1.style.display = "none";
+    photoError2.style.display = "none";
+    photoError3.style.display = "none";
     SelectedRover.style.display = "none";
     RoverBlock.style.display = "grid";
     setPhotos([]);
